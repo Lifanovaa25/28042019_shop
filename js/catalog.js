@@ -20,7 +20,7 @@ class Product {
         productCardBlock.innerHTML = `
         <div class="foto-item" style ="background-image: url(/images/catalog/${this.pic})"></div>
         <div class="goods-name">${this.name}</div>
-        <div class="goods-price">${this.price} руб.</div>`;
+        <div class="goods-price">${this.price} руб. </div>`;
 
     //4.добавляем уврточку товара в блок
         this.el.appendChild(productCardBlock);
@@ -37,18 +37,18 @@ class Catalog {
         this.el.innerHTML = '';
     }
     preloaderOn() {
-        let preloaderBlock = document.createElement('div');
-        preloaderBlock.classList.add('preloader');
-        this.el.appendChild(preloaderBlock);
+        let preloader = document.createElement('div');
+        preloader.classList.add('preloader');
+        this.el.appendChild(preloader);
     }
     preloaderOff() {
-
         this.cleanCatalog();
     }
     renderCatalog ( parentCatID ) {
-    
+
         this.cleanCatalog();
         this.preloaderOn();
+
         //1. создаем пустой объект
         let xhr = new XMLHttpRequest; 
 
@@ -72,19 +72,22 @@ class Catalog {
         xhr.send();
 
         //4. ждем ответ от сервера
-        
+        // let that = this;
+
         xhr.addEventListener('load', () => { 
+            // потеря контекста
             this.preloaderOff();
+
             //преобразовываем данные в формат json для js 
             let data = JSON.parse( xhr.responseText );
                 
-            data.forEach(function( value, index ) {
-                let newProduct = new Product(value.name, value.pic, value.price);
-                newProduct.createCard();
-                
-            });
+        data.forEach(function( value, index ) {
+            let newProduct = new Product(value.name, value.pic, value.price);
+            newProduct.createCard();
+            
+        });
 
-            console.log( data );
+        console.log( data );
         
         });
         
@@ -105,3 +108,11 @@ catalogSelect.addEventListener('change', function() {
     let catalog = new Catalog();
     catalog.renderCatalog( selectValue );
 });
+
+// 
+
+let detailProd = document.getElementsByClassName('goods-item');
+detailProd.addEventListener('click', function(){
+    window.location.href = '/pages/detail.php';
+});
+

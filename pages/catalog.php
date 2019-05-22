@@ -43,17 +43,14 @@ $qr_people = "SELECT * FROM `categories`
 $result_people = mysqli_query($db, $qr_people); 
 $row_parent = mysqli_fetch_assoc($result_people); 
 
-
+include ($_SERVER['DOCUMENT_ROOT'] . "/modules/breadcrumbs.php");
 ?>
     
 
 
 
 
-    <div class="breadcrumbs">
-        <a href="#">Главная </a>
-        <a href="#"><?=$row_parent['name']?></a>
-    </div>    
+    
     <div class="category-text">
         <h1><?=$row_parent['name']?></h1>
         <p>Все товары</p>

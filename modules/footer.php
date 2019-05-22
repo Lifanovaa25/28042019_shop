@@ -32,7 +32,8 @@
 </div> 
 
 
-    <script src="/js/catalog.js"></script>      
+    <script src="/js/catalog.js"></script>   
+    <script src="/js/detail.js"></script>      
     <script src="/js/main.js"></script>    
 </body>
 </html>

@@ -3,7 +3,10 @@
     include ($_SERVER['DOCUMENT_ROOT'] .'/php/connect.php');
     // https://study.inordic.ru/panel/lesson_teacher?group=34&lesson=252
     $cat = $_GET['id'];
-    sleep(3);
+    
+    sleep(2);
+
+
     // ищем дочерние категории на основании переданной родительской категории
     $query = "SELECT * FROM `categories` WHERE `parent_category` = $cat";
     $result = mysqli_query($db, $query);

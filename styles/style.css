@@ -246,6 +246,7 @@ select {
   border: 2px solid  #e5e5e5;
   flex-basis: 300px;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 .goods-name {
@@ -253,6 +254,7 @@ select {
   font-family: 'Roboto Condensed', sans-serif;
   margin: 10px 0;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .goods-price {
@@ -379,11 +381,89 @@ h3 {
 }
 
 .preloader {
-  width: 100px;
-  height: 100px;
-  background: url(/images/else/35.svg) center center/contain no-repeat;
-  right: 0;
-  left: 0;
+  width: 200px;
+  height: 40px;
+  background: url(/images/else/preloader.svg) center center/contain no-repeat;
   margin: 0 auto;
+}
+
+.details {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.det-pic {
+  width: 50%;
+  height: 450px;
+  margin: 0 auto;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.details-title {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.details-code {
+  color: #a3a3a3;
+}
+
+.det-price {
+  font-family: Georgia;
+  font-size: 18px;
+  font-style: italic;
+  color: #606060;
+  margin: 50px;
+}
+
+.det-description {
+  color: #606060;
+  width: 600px;
+  margin: 0 auto;
+  line-height: 24px;
+}
+
+.det-size__text {
+  color: #606060;
+  text-transform: uppercase;
+}
+
+.details-size__text_margin {
+  margin: 20px 0;
+}
+
+.details-size__item {
+  color: #464542;
+  border: 1px solid #959595;
+  margin: 0 4px;
+  padding: 7px;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+  cursor: pointer;
+}
+
+.details-size__item:hover {
+  background: #464542;
+  color: #fff;
+  border-color: #464542;
+}
+
+.button {
+  background: #f68236;
+  width: 190px;
+  height: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 20px;
+  margin: 0 auto;
+  cursor: pointer;
+  -webkit-transition: 0.4s all;
+  transition: 0.4s all;
+}
+
+.button:hover {
+  background: #fa761d;
 }
 /*# sourceMappingURL=style.css.map */
